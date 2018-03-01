@@ -4,13 +4,13 @@ import { fromJS } from 'immutable'
 // reducer with initial state
 const initialState = fromJS({
   fetching: false,
-  allIssues: null,
-  error: null
+  allIssues: [],
+  error: ''
 });
 
 export function reducer(state = initialState, action) {
   switch (action.type) {
-    case issueTypes.FETCH_ISSUES:
+    case issueTypes.FETCH_ISSUES_START:
       return state.mergeIn(['fetching'], true);
 
     case issueTypes.FETCH_ISSUES_SUCCESS:
